@@ -1,0 +1,19 @@
+name: "Long Names"
+
+on:
+  push:
+
+jobs:
+  longjob:
+    name: "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    runs-on: ubuntu-22.04
+    steps:
+      - name: "duplicate"
+        run: |
+          echo "You should not see me"
+  shortjob:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+        run: |
+          echo "You should not see me"
