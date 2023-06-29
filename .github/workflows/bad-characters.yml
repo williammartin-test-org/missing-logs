@@ -1,0 +1,23 @@
+name: "Bad Characters"
+
+on:
+  push:
+
+jobs:
+  test:
+    name: Test matrix colon text
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        include:
+        - text: "job param contains a : colon"
+        - text: "job param contains a ? question mark"
+        - text: "job param contains a * asterisk"
+        - text: "job param contains a | pipe"
+        - text: "job param contains a > greater than"
+        - text: "job param contains a < less than"
+        - text: "job param contains an * asertisk"
+        - text: "job param doesn't contain any funny characters"
+    steps:
+      - run: |
+          echo "Text: ${{ matrix.text }}"
