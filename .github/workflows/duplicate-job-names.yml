@@ -4,14 +4,15 @@ on:
   push:
 
 jobs:
-  test:
-    name: Test matrix duplicate text
+  first:
+    name: "duplicate"
     runs-on: ubuntu-22.04
-    strategy:
-      matrix:
-        include:
-        - text: "duplicate"
-        - text: "duplicate"
+    steps:
+      - run: |
+          echo "Random number: ${RANDOM}"
+  second:
+    name: "duplicate"
+    runs-on: ubuntu-22.04
     steps:
       - run: |
           echo "Random number: ${RANDOM}"
