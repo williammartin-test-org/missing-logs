@@ -1,0 +1,17 @@
+name: "Duplicate Job Names"
+
+on:
+  push:
+
+jobs:
+  test:
+    name: Test matrix duplicate text
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        include:
+        - text: "duplicate"
+        - text: "duplicate"
+    steps:
+      - run: |
+          echo "Random number: ${RANDOM}"
